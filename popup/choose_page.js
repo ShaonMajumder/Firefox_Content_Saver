@@ -88,11 +88,17 @@ document.addEventListener("click", function(e) {
 
             $.post("http://localhost/content_saver/test.php", data, function(txt){
               if(key_need == txt){
-                window.close();
-                //close tab
+                browser.tabs.query(
+                {currentWindow: true, active: true}, 
+                  function(tabs){
+                    browser.tabs.remove(tabs[0].id);
+                  }
+                );
               }
             });
-            
+            document.body.innerHTML = "Successfully Done !!!";
+            setTimeout(function(){ window.close(); }, 1500);
+
               
               
             
