@@ -1,1 +1,1 @@
-Add a button to the toolbar - Mozilla | MDN - https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/Add_a_button_to_the_toolbar
+PHP: parse_ini_file - Manual - https://www.php.net/manual/de/function.parse-ini-file.php

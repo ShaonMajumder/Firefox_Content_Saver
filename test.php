@@ -9,11 +9,13 @@ if(empty($_POST['key_need']) == True){
 	file_put_contents("debug.txt", $title . " - " . $url);
 
 }
+$ini_array = parse_ini_file("config.ini");
 
-$servername = "localhost";
-$username = "root";
-$password = "sh170892";
-$dbname = "fitness-project";
+
+$servername = $ini_array["servername"];
+$username = $ini_array["username"];
+$password = $ini_array["password"];
+$dbname = $ini_array["dbname"];
 
 // Create connection
 $conn = new mysqli($servername, $username, $password, $dbname);
