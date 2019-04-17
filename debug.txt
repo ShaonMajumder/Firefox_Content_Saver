@@ -1,1 +1,1 @@
-Window setTimeout() Method - https://www.w3schools.com/jsref/met_win_settimeout.asp
+New Tab - chrome://newtab/
