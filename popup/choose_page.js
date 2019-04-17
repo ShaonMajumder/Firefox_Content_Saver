@@ -20,6 +20,17 @@ function htmlDecode(input){
 
 document.addEventListener("click", function(e) {
   if(e.target.className == "button1"){
+    $.post("http://localhost/content_saver/test.php", {"action":"get_cats"}, function(txt){
+                var arTxt = txt.split(',');
+                for (let cat of arTxt) {
+                  document.getElementById("select").innerHTML += '<option value="'+cat+'">'+cat+'</option>'
+                  alert(cat);
+                  /*
+<option value="health">Health</option>
+      <option value="programming">Programming</option>
+                  */
+                }
+              });
     document.getElementById("form1").style="display:block;";
   }
   if(e.target.className == "submit"){
@@ -43,7 +54,7 @@ document.addEventListener("click", function(e) {
               $.ajax({
                       type: 'POST',
                       url: "http://localhost/content_saver/test.php",
-                      data: {"key_need":key_need},
+                      data: {"action":"validate_key","key_need":key_need},
                       error: function(jqXHR, textStatus) { alert(textStatus); },
                       dataType: 'text',
                       async: false,
@@ -75,7 +86,8 @@ document.addEventListener("click", function(e) {
                 "url": url1,
                 "tag": TagName_,
                 "postkey": key_need,
-                "solution":solution_
+                "solution":solution_,
+                "action":"post_data"
             };  
 
             $.post("http://localhost/content_saver/test.php", data, function(txt){
