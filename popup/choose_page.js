@@ -21,16 +21,12 @@ function htmlDecode(input){
 document.addEventListener("click", function(e) {
   if(e.target.className == "button1"){
     $.post("http://localhost/content_saver/test.php", {"action":"get_cats"}, function(txt){
-                var arTxt = txt.split(',');
-                for (let cat of arTxt) {
-                  document.getElementById("select").innerHTML += '<option value="'+cat+'">'+cat+'</option>'
-                  alert(cat);
-                  /*
-<option value="health">Health</option>
-      <option value="programming">Programming</option>
-                  */
-                }
-              });
+      var arTxt = txt.split(',');
+      for (let cat of arTxt) {
+        document.getElementById("select").innerHTML += '<option value="'+cat+'">'+cat+'</option>';
+      }
+    });
+    document.getElementById("initial").style="display:none;";
     document.getElementById("form1").style="display:block;";
   }
   if(e.target.className == "submit"){

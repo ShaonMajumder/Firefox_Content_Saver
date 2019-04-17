@@ -1,1 +1,1 @@
-print select opions javascript - Google Search - https://www.google.com/search?client=firefox-b-d&q=print+select+opions+javascript
+Select: data - Adminer - http://localhost/adminer-4.7.1-mysql.php?username=root&db=fitness-project&select=data
